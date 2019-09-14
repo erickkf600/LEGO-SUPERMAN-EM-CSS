@@ -1,0 +1,110 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cenario{
+    width: 100vw;
+    height: 100vh;
+    display:grid; 
+    background: #7bd3f7;
+    grid-template-columns: 3.5fr 1fr;
+    grid-template-rows: 20vh 70vh 10vh; 
+    grid-template-areas: 'ceu ceu'
+                          'super super'
+                          'chao chao' 
+}
+.super{
+    background: #fff;
+    grid-area: super;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+.cabeca{
+    width: 130px;
+    height: 110px;
+    background: #F0BEAF;
+    border-radius: 15px;
+    z-index: 1; 
+    position: relative;
+    background-image:
+    linear-gradient(
+      rgba(255,255,255,0.3),
+      rgba(255,255,255,0) 20%,
+      rgba(0,0,0,0) 80%,
+      rgba(0,0,0,0.15) 95%,
+      rgba(0,0,0,0.3)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0) 50%,
+      rgba(255,255,255,0.2),
+      rgba(255,255,255,0)
+    );
+    border-radius: 1.5em;
+}
+.cabeca:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  height: 2em;
+  transform: translateX(-50%);
+  background-color: #F0BEAF;
+}
+
+.cabeca:after {
+  bottom: -1em;
+  width: 4.5em;
+  height: 1em;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.2),
+      rgba(0,0,0,0.05) 50%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0) 70%,
+      rgba(255,255,255,0.25) 80%,
+      rgba(255,255,255,0) 90%
+    );
+  border-radius: 0 0 3px 3px;
+}
+
+.cabelo{
+    position: absolute;
+    bottom: 70%;
+    height: 75px;
+    width: calc(120px + 10px);
+    background: #000;
+    border-radius: 50% 50% 60% 40% / 80% 50% 50% 20%;
+    z-index: 2;
+	box-shadow: 0 7px 2px -7px rgba(0,0,0,0.5), inset 0 -12px 8px -10px rgba(0,0,0,0.6);
+}
+.olhos{
+  position: absolute;
+  top: 2.25em;
+  left: 50%;  
+}
+.olhos:before, .olhos:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 7px solid #171717;
+  border-radius: 10px;
+}
+.olhos:before {
+  left: 11px;
+}
+.olhos:after {
+  right: 11px;
+}
+
+.chao{
+    background: #404040;
+    grid-area: chao;
+}
+
