@@ -1,110 +1,168 @@
 html, body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .cenario{
-    width: 100vw;
-    height: 100vh;
-    display:grid; 
-    background: #7bd3f7;
-    grid-template-columns: 3.5fr 1fr;
-    grid-template-rows: 20vh 70vh 10vh; 
-    grid-template-areas: 'ceu ceu'
-                          'super super'
-                          'chao chao' 
+  width: 100vw;
+  height: 100vh;
+  display:grid; 
+  background: #7bd3f7;
+  grid-template-columns: 3.5fr 1fr;
+  grid-template-rows: 20vh 70vh 10vh; 
+  grid-template-areas: 'ceu ceu'
+  'super super'
+  'chao chao' 
+}
+body .cenario :before,
+body .cenario :after {
+  position: absolute;
+  content: "";
 }
 .super{
-    background: #fff;
-    grid-area: super;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    position: relative;
+  background: #fff;
+  grid-area: super;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
 }
 .cabeca{
-    width: 130px;
-    height: 110px;
-    background: #F0BEAF;
-    border-radius: 15px;
-    z-index: 1; 
-    position: relative;
-    background-image:
-    linear-gradient(
-      rgba(255,255,255,0.3),
-      rgba(255,255,255,0) 20%,
-      rgba(0,0,0,0) 80%,
-      rgba(0,0,0,0.15) 95%,
-      rgba(0,0,0,0.3)
-    ),
-    linear-gradient(
-      to right,
-      rgba(255,255,255,0) 50%,
-      rgba(255,255,255,0.2),
-      rgba(255,255,255,0)
-    );
-    border-radius: 1.5em;
+  width: 130px;
+  height: 110px;
+  background: #F0BEAF;
+  border-radius: 15px;
+  z-index: 1; 
+  position: relative;
+  background-image:
+  linear-gradient(
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.15) 95%,
+    rgba(0,0,0,0.3)
+  ),
+  linear-gradient(
+    to right,
+    rgba(255,255,255,0) 50%,
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0)
+  );
+  border-radius: 1.5em;
 }
 .cabeca:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  height: 2em;
-  transform: translateX(-50%);
-  background-color: #F0BEAF;
+content: '';
+position: absolute;
+left: 50%;
+height: 2em;
+transform: translateX(-50%);
+background-color: #F0BEAF;
 }
 
 .cabeca:after {
-  bottom: -1em;
-  width: 4.5em;
-  height: 1em;
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.2),
-      rgba(0,0,0,0.05) 50%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255,255,255,0) 70%,
-      rgba(255,255,255,0.25) 80%,
-      rgba(255,255,255,0) 90%
-    );
-  border-radius: 0 0 3px 3px;
+bottom: -1em;
+width: 4.5em;
+height: 1em;
+background-image:
+  linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.05) 50%
+  ),
+  linear-gradient(
+    to right,
+    rgba(255,255,255,0) 70%,
+    rgba(255,255,255,0.25) 80%,
+    rgba(255,255,255,0) 90%
+  );
+border-radius: 0 0 3px 3px;
 }
 
 .cabelo{
-    position: absolute;
-    bottom: 70%;
-    height: 75px;
-    width: calc(120px + 10px);
-    background: #000;
-    border-radius: 50% 50% 60% 40% / 80% 50% 50% 20%;
-    z-index: 2;
-	box-shadow: 0 7px 2px -7px rgba(0,0,0,0.5), inset 0 -12px 8px -10px rgba(0,0,0,0.6);
-}
-.olhos{
   position: absolute;
-  top: 2.25em;
-  left: 50%;  
+  bottom: 70%;
+  height: 75px;
+  width: calc(120px + 10px);
+  background: #000;
+  z-index: 2;
+  border-radius: 50% 50% 60% 40% / 80% 50% 50% 20%;
+  box-shadow: 0 7px 2px -7px rgba(0,0,0,0.5), inset 0 -12px 8px -10px rgba(0,0,0,0.6);
+}
+.cabelo span {
+  border-radius: 0 0 60% 40%;
+  z-index: 2;
+  box-shadow: 0px 4px 4px -5px rgba(255, 255, 255, 0.5);
+  translate: rotate(-7deg);
+}
+.cabelo span:nth-of-type(1) {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  height: 40px;
+  width: calc(90px + 10px);
+  border-bottom: 1px solid #454545;
+}
+
+.super .cabeca .cabelo:before, .super .cabeca .cabelo:after {
+  position: absolute;
+  width: 15px;
+  background: #000;
+}
+.super .cabeca .cabelo .franja:before{
+  position: absolute;
+  width: 25px;
+  background: #000;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 30px;
+  border-radius: 10% 70% 40% 60% / 10% 20% 80% 70%;
+  box-shadow: 2px 0 2px -2px rgba(0, 0, 0, 0.5), inset -12px -5px 8px -10px rgba(0, 0, 0, 0.8);
+  transform: skewY(50deg);
+  transform: skewX(30deg);
+}
+
+.super .cabeca .cabelo:before {
+  position: absolute;
+  transform: rotate(6deg);
+  bottom: -23px;
+  left: -1px;
+  height: 50px;
+  border-radius: 10% 70% 40% 60% / 10% 20% 80% 70%;
+  box-shadow: 2px 0 2px -2px rgba(0, 0, 0, 0.5), inset -12px -5px 8px -10px rgba(0, 0, 0, 0.8);
+}
+.super .cabeca .cabelo:after {
+  position: absolute;
+  height: 70px;
+  right: -5px;
+  bottom: -23px;
+  border-radius: 60% 40% 60% 40%;
+  box-shadow: -2px 0 2px -2px rgba(0, 0, 0, 0.5), inset 12px -10px 15px -10px rgba(0, 0, 0, 0.8);
+}
+
+.olhos{
+position: absolute;
+top: 2.50em;
+left: 50%;  
 }
 .olhos:before, .olhos:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 0;
-  height: 0;
-  border: 7px solid #171717;
-  border-radius: 10px;
+content: "";
+position: absolute;
+top: 0;
+width: 0;
+height: 0;
+border: 7px solid #171717;
+border-radius: 10px;
 }
 .olhos:before {
-  left: 11px;
+left: 11px;
 }
 .olhos:after {
-  right: 11px;
+right: 11px;
 }
 
 .chao{
-    background: #404040;
-    grid-area: chao;
+  background: #404040;
+  grid-area: chao;
 }
 
